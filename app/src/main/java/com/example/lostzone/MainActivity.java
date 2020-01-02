@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(MainActivity.this, "Niego", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private boolean validaPermisos() {

@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -67,7 +70,20 @@ public class FrgDos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frg_dos, container, false);
+        View vista = inflater.inflate(R.layout.fragment_frg_dos, container, false);
+        final EditText num1 = vista.findViewById(R.id.txt_n1f2);
+        final EditText num2 = vista.findViewById(R.id.txt_n2f2);
+        Button boton = (Button) vista.findViewById(R.id.btn_Restarfrg2);
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double resta = Double.parseDouble(num1.getText().toString()) - Double.parseDouble(num2.getText().toString());
+                Toast.makeText(getContext(), "La resta es: " + resta, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -2,34 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/txt_dlg1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="NUmeor"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:padding="20dp" />
 
     <Button
         android:id="@+id/btn_dlg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:padding="20dp"
-        android:text="Boton" />
+        android:text="SUMAR" />
 
     <EditText
         android:id="@+id/txt_dlg2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:ems="10"
         android:hint="numeor"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:padding="20dp" />
 
 </LinearLayout>

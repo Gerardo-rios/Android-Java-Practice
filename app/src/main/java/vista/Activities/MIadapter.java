@@ -1,5 +1,6 @@
 package vista.Activities;
 
+import android.app.Dialog;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,33 @@ public class MIadapter extends RecyclerView.Adapter<MIadapter.ViewHolderArts> {
             holder.img_artista.setImageResource(lista.get(position).getFoto());
         }
         holder.dato_date.setText(lista.get(position).getNacimiento());
+
+        final String name = (String) holder.dato_nombre.getText();
+        final String nameArt = (String) holder.dato_nartistico.getText();
+        final String wasborn = (String) holder.dato_date.getText();
+        final int picture = (int) lista.get(position).getFoto();
+        final String uri = (String) lista.get(position).getPath();
+
+        holder.img_artista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dlg = new Dialog(v.getContext());
+                dlg.setContentView(R.layout.artisan);
+                TextView dlg_name = dlg.findViewById(R.id.lbl_nombre_artista_dlg);
+                dlg_name.setText(name);
+                TextView dlg_nameArtis = dlg.findViewById(R.id.lbl_nombre_artistico_dlg);
+                dlg_nameArtis.setText(nameArt);
+                TextView dlg_date = dlg.findViewById(R.id.lbl_date_artista_dlg);
+                dlg_date.setText(wasborn);
+                ImageView dlg_img = dlg.findViewById(R.id.image);
+                if (uri != null){
+                    dlg_img.setImageURI(Uri.parse(uri));
+                } else if (picture != 0){
+                    dlg_img.setImageResource(picture);
+                }
+                dlg.show();
+            }
+        });
     }
 
     @Override

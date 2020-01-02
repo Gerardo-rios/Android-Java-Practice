@@ -30,10 +30,10 @@ public class Suma_Activity extends AppCompatActivity implements View.OnClickList
         boton.setOnClickListener(this);
     }
 
-    public int sumar(){
-        int resultado = 0;
+    public Double sumar(){
+        Double resultado = null;
 
-        resultado = Integer.parseInt(num1.getText().toString()) + Integer.parseInt(num2.getText().toString());
+        resultado = Double.parseDouble(num1.getText().toString()) + Double.parseDouble(num2.getText().toString());
 
         return resultado;
     }

@@ -16,18 +16,18 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Num 1"
-        android:inputType="textPersonName" />
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/txt_n2f1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="NUm 2"
+        android:hint="Num 2"
         android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/btn_Restarfrg1"
+        android:id="@+id/btn_Sumarfrg1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sumar" />

@@ -74,18 +74,18 @@ public class FrgUno extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_frg_uno, container, false);
         final EditText n1 = vista.findViewById(R.id.txt_n1f1); //no se puede usar findviewbyid si no pertenecen al activiy donde esta el componente
         final EditText n2 = vista.findViewById(R.id.txt_n2f1);
-        final Button btn = vista.findViewById(R.id.btn_Restarfrg1);
+        final Button btn = vista.findViewById(R.id.btn_Sumarfrg1);
 
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double suma = Integer.parseInt(n1.getText().toString()) + Double.parseDouble(n2.getText().toString());
+                Double suma = Double.parseDouble(n1.getText().toString()) + Double.parseDouble(n2.getText().toString());
                 Toast.makeText(getContext(), suma.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-        return inflater.inflate(R.layout.fragment_frg_uno, container, false);
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
