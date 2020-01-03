@@ -57,8 +57,8 @@ public class MIApp2 extends AppCompatActivity implements View.OnClickListener{
             InputStream input = getResources().openRawResource(R.raw.archivo_raw);
             BufferedReader lector = new BufferedReader(new InputStreamReader(input));
             String cadena = lector.readLine();
-            //leerRaw.setText(R.drawable.osama + " " + R.drawable.wazoski + " " + R.drawable.feelsbatman + " " + R.drawable.lanita + " " + R.drawable.riley + " " + R.drawable.yopuesquienmas);
-            leerRaw.setText("Datos listados");
+            leerRaw.setText(R.drawable.osama + " " + R.drawable.wazoski + " " + R.drawable.feelsbatman + " " + R.drawable.lanita + " " + R.drawable.riley + " " + R.drawable.yopuesquienmas);
+            //leerRaw.setText("Datos listados");
             String[] split1 = cadena.split(";");
             lista = new ArrayList<>();
             for (int i = 0; i < split1.length; i++){
