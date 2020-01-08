@@ -1,0 +1,51 @@
+<?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
+<reyes>
+    <godo>
+
+        <nombre>
+
+            Ricardo
+
+        </nombre>
+
+
+        <periodo>
+
+            (586 - 601)
+
+        </periodo>
+
+    </godo>
+
+    <godo>
+
+        <nombre>
+
+            Nostradamus
+
+        </nombre>
+
+        <periodo>
+
+            (503 - 540)
+
+        </periodo>
+
+    </godo>
+
+    <godo>
+
+        <nombre>
+
+            Mazao King
+
+        </nombre>
+
+        <periodo>
+
+            (2020 - 2050)
+
+        </periodo>
+
+    </godo>
+</reyes>

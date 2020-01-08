@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_nombregodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:text="Nombre: "
+        />
+
+    <TextView
+        android:id="@+id/txt_godo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/txt_periodo_godo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:text="Periodo: "
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_periodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+</LinearLayout>

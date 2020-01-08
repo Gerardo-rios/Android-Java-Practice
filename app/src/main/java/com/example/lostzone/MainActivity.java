@@ -16,6 +16,7 @@ import vista.Activities.IgresarNombreApellido;
 import vista.Activities.MIApp2;
 import vista.Activities.Suma_Activity;
 import vista.Activities.logear;
+import vista.Activities.reyesMagos;
 import vista.Fragmentos.Fragemento_Activity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -221,12 +222,16 @@ public class MainActivity extends AppCompatActivity {
                 intencion = new Intent(MainActivity.this, Artistas_RecyclerView.class);
                 startActivity(intencion);
                 break;
-            case R.id.opcionInterno:
+            case R.id.leerRaw:
                 intencion = new Intent(MainActivity.this, MIApp2.class);
                 startActivity(intencion);
                 break;
-            case R.id.opcionMapas:
+            case R.id.leerArchivo:
                 intencion = new Intent(MainActivity.this, ActividadMemoriaInterna.class);
+                startActivity(intencion);
+                break;
+            case R.id.leerXml:
+                intencion = new Intent(MainActivity.this, reyesMagos.class);
                 startActivity(intencion);
                 break;
         }

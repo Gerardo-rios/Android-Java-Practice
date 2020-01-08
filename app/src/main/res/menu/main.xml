@@ -109,6 +109,31 @@
                 android:id="@+id/opcionInterno"
                 android:title="Interno">
 
+                <menu>
+
+                    <item
+
+                        android:id="@+id/leerRaw"
+                        android:title="Raw">
+
+                    </item>
+
+                    <item
+
+                        android:id="@+id/leerXml"
+                        android:title="XML">
+
+                    </item>
+
+                    <item
+
+                        android:id="@+id/leerArchivo"
+                        android:title="Archivo">
+
+                    </item>
+
+                </menu>
+
             </item>
             <item
 
@@ -176,4 +201,5 @@
         android:title="Mapas">
 
     </item>
+
 </menu>
