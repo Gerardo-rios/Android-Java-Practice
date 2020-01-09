@@ -14,6 +14,7 @@ import vista.Activities.Artistas_RecyclerView;
 import vista.Activities.Escuchar_Fragmento_Activity;
 import vista.Activities.IgresarNombreApellido;
 import vista.Activities.MIApp2;
+import vista.Activities.MemoriaExterna;
 import vista.Activities.Suma_Activity;
 import vista.Activities.logear;
 import vista.Activities.reyesMagos;
@@ -232,6 +233,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.leerXml:
                 intencion = new Intent(MainActivity.this, reyesMagos.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionSD:
+                intencion = new Intent(MainActivity.this, MemoriaExterna.class);
                 startActivity(intencion);
                 break;
         }

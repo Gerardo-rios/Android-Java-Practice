@@ -17,10 +17,26 @@
     </godo>
     <godo>
         <nombre>
-            Mazao King
+            Baphomet King
         </nombre>
         <periodo>
             (2020 - 2050)
+        </periodo>
+    </godo>
+    <godo>
+        <nombre>
+            Isabel III
+        </nombre>
+        <periodo>
+            (1952 - 2020)
+        </periodo>
+    </godo>
+    <godo>
+        <nombre>
+            Fernando II
+        </nombre>
+        <periodo>
+            (1992 - 2000)
         </periodo>
     </godo>
 </reyes>

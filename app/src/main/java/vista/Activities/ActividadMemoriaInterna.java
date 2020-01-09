@@ -130,7 +130,7 @@ public class ActividadMemoriaInterna extends AppCompatActivity implements View.O
             break;
 
             case R.id.btn_imagen:
-                Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
                 gallery.setType("image/*");
                 startActivityForResult(gallery, PICK_IMAGE);
             break;

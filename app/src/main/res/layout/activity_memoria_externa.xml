@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vista.Activities.ActividadMemoriaInterna">
+
+    <EditText
+        android:id="@+id/txt_NombreME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/txt_ApellidoME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:hint="Apellido"/>
+
+
+    <EditText
+        android:id="@+id/txt_artisticoME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre Artistico" />
+
+    <EditText
+        android:id="@+id/txt_nacimientoME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="date"
+        android:focusable="false"
+        android:clickable="true"
+        android:hint="Fecha de nacimiento" />
+
+    <ImageButton
+        android:id="@+id/btn_imagenME"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_weight="0"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_guardarME"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Guardar" />
+
+        <Button
+            android:id="@+id/btn_buscarTodosME"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Buscar Todos" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbl_datosME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:textColor="@color/colorAccent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_listaME"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:padding="20dp" />
+
+</LinearLayout>
