@@ -15,6 +15,7 @@ import vista.Activities.Escuchar_Fragmento_Activity;
 import vista.Activities.IgresarNombreApellido;
 import vista.Activities.MIApp2;
 import vista.Activities.MemoriaExterna;
+import vista.Activities.ProductoHelper;
 import vista.Activities.Suma_Activity;
 import vista.Activities.logear;
 import vista.Activities.reyesMagos;
@@ -237,6 +238,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.opcionSD:
                 intencion = new Intent(MainActivity.this, MemoriaExterna.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionHelper:
+                intencion = new Intent(MainActivity.this, ProductoHelper.class);
                 startActivity(intencion);
                 break;
         }

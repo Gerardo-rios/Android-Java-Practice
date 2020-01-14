@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="vista.Activities.MemoriaExterna"></activity>
+        <activity android:name="vista.Activities.ProductoHelper"></activity>
+        <activity android:name="vista.Activities.MemoriaExterna" />
         <activity android:name="vista.Activities.reyesMagos" />
 
         <meta-data

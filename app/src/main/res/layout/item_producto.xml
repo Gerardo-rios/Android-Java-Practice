@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:text="Codigo: "
+        />
+
+    <TextView
+        android:id="@+id/txt_productoCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:text="Nombre: "
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_ProductoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:text="Descripcion: "
+        />
+
+    <TextView
+        android:id="@+id/txt_ProductoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:text="Precio: "
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_ProductoCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:text="Cantidad: "
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txt_ProductoExistencies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        />
+
+
+
+</LinearLayout>
