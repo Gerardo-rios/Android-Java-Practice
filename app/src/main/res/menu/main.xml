@@ -106,45 +106,15 @@
         <menu>
             <item
 
-                android:id="@+id/opcionInterno"
-                android:title="Interno">
-
-                <menu>
-
-                    <item
-
-                        android:id="@+id/leerRaw"
-                        android:title="Raw">
-
-                    </item>
-
-                    <item
-
-                        android:id="@+id/leerXml"
-                        android:title="XML">
-
-                    </item>
-
-                    <item
-
-                        android:id="@+id/leerArchivo"
-                        android:title="Archivo">
-
-                    </item>
-
-                </menu>
+                android:id="@+id/opcionArchives"
+                android:title="Archivos">
 
             </item>
+
             <item
 
-                android:id="@+id/opcionPrograma"
-                android:title="Programa">
-
-            </item>
-            <item
-
-                android:id="@+id/opcionSD"
-                android:title="SD">
+                android:id="@+id/leerXml"
+                android:title="XML">
 
             </item>
         </menu>

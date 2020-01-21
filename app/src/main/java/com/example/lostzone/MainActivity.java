@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import vista.Activities.ActividadMemoriaInterna;
+import vista.Activities.Archivos_Memoria;
 import vista.Activities.Artistas_RecyclerView;
 import vista.Activities.Escuchar_Fragmento_Activity;
 import vista.Activities.IgresarNombreApellido;
@@ -224,24 +225,28 @@ public class MainActivity extends AppCompatActivity {
                 intencion = new Intent(MainActivity.this, Artistas_RecyclerView.class);
                 startActivity(intencion);
                 break;
-            case R.id.leerRaw:
+            /*case R.id.leerRaw:
                 intencion = new Intent(MainActivity.this, MIApp2.class);
                 startActivity(intencion);
                 break;
             case R.id.leerArchivo:
                 intencion = new Intent(MainActivity.this, ActividadMemoriaInterna.class);
                 startActivity(intencion);
-                break;
+                break;*/
             case R.id.leerXml:
                 intencion = new Intent(MainActivity.this, reyesMagos.class);
                 startActivity(intencion);
                 break;
-            case R.id.opcionSD:
+            /*case R.id.opcionSD:
                 intencion = new Intent(MainActivity.this, MemoriaExterna.class);
                 startActivity(intencion);
-                break;
+                break;*/
             case R.id.opcionHelper:
                 intencion = new Intent(MainActivity.this, ProductoHelper.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionArchives:
+                intencion = new Intent(MainActivity.this, Archivos_Memoria.class);
                 startActivity(intencion);
                 break;
         }
