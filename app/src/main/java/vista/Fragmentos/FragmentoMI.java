@@ -210,7 +210,7 @@ public class FragmentoMI extends Fragment implements View.OnClickListener{
 
             case R.id.btn_guardar_frg:
                 try {
-                    OutputStreamWriter escritor = new OutputStreamWriter(getActivity().openFileOutput("archivito.txt", Context.MODE_APPEND));
+                    OutputStreamWriter escritor = new OutputStreamWriter(getActivity().openFileOutput("archiveto.txt", Context.MODE_APPEND));
                     escritor.write(cajaName.getText().toString() + " " + cajaLastname.getText().toString() + "," + artistico.getText().toString() + "," + wasborn.getText().toString() + "," + imageUri + ";");
                     datos.setText("Guardado Exitosamente");
                     cajaName.setText(null);
@@ -227,7 +227,7 @@ public class FragmentoMI extends Fragment implements View.OnClickListener{
             case R.id.btn_buscarTodos_frg:
                 try {
 
-                    BufferedReader lector = new BufferedReader(new InputStreamReader(getActivity().openFileInput("archivito.txt")));
+                    BufferedReader lector = new BufferedReader(new InputStreamReader(getActivity().openFileInput("archiveto.txt")));
                     String lineas = lector.readLine();
                     cargarRecycler(lineas);
                     //datos.setText(lineas);

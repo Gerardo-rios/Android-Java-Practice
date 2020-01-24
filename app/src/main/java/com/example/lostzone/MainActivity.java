@@ -16,6 +16,7 @@ import vista.Activities.Escuchar_Fragmento_Activity;
 import vista.Activities.IgresarNombreApellido;
 import vista.Activities.MIApp2;
 import vista.Activities.MemoriaExterna;
+import vista.Activities.ORM;
 import vista.Activities.ProductoHelper;
 import vista.Activities.Suma_Activity;
 import vista.Activities.logear;
@@ -247,6 +248,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.opcionArchives:
                 intencion = new Intent(MainActivity.this, Archivos_Memoria.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionORM:
+                intencion = new Intent(MainActivity.this, ORM.class);
                 startActivity(intencion);
                 break;
         }

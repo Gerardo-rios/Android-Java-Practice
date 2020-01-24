@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.lostzone">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
+    <dist:module dist:instant="true" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="vista.Activities.Archivos_Memoria"></activity>
-
+        <activity android:name="vista.Activities.ORM"></activity>
+        <activity android:name="vista.Activities.Archivos_Memoria" />
         <activity android:name="vista.Activities.ProductoHelper" />
         <activity android:name="vista.Activities.MemoriaExterna" />
         <activity android:name="vista.Activities.reyesMagos" />
@@ -38,6 +39,28 @@
         <activity android:name="vista.Activities.IgresarNombreApellido" />
         <activity android:name="vista.Activities.logear" />
         <activity android:name="vista.Activities.Suma_Activity" />
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="AndroidVehi"
+        />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1"
+            ></meta-data>
+
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.lostzone.modelo.car"
+            ></meta-data>
+
+        <provider
+            android:authorities="com.example.lostzone"
+            android:name="com.activeandroid.content.ContentProvider"
+            android:enabled="true"
+            android:exported="false"
+            ></provider>
+
     </application>
 
 </manifest>
