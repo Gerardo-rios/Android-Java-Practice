@@ -78,8 +78,13 @@ public class FrgDos extends Fragment {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double resta = Double.parseDouble(num1.getText().toString()) - Double.parseDouble(num2.getText().toString());
-                Toast.makeText(getContext(), "La resta es: " + resta, Toast.LENGTH_SHORT).show();
+                try {
+                    Double resta = Double.parseDouble(num1.getText().toString()) - Double.parseDouble(num2.getText().toString());
+                    Toast.makeText(getContext(), "La resta es: " + resta, Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException ex){
+                    Toast.makeText(getContext(), "Inserta numeros, CERDO", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

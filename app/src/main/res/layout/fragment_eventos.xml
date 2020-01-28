@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.eventos.EventosFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <Button
+        android:id="@+id/btn_btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="50px"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="60dp"
+        android:text="LOGIN" />
+
+    <Button
+        android:id="@+id/btn_btnsumar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="50px"
+        android:paddingTop="3dp"
+        android:layout_marginBottom="60dp"
+        android:text="SUMAS" />
+
+    <Button
+        android:id="@+id/btn_btnparametros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:padding="50px"
+        android:text="PARAMETROS"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+</LinearLayout>

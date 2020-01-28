@@ -22,10 +22,19 @@ import vista.Activities.Suma_Activity;
 import vista.Activities.logear;
 import vista.Activities.reyesMagos;
 import vista.Fragmentos.Fragemento_Activity;
+
+import com.example.lostzone.ui.archivos.ArchivosFragment;
+import com.example.lostzone.ui.database.DatabaseFragment;
+import com.example.lostzone.ui.eventos.EventosFragment;
+import com.example.lostzone.ui.interfaces.InterfacesFragment;
+import com.example.lostzone.ui.maps.MapsFragment;
+import com.example.lostzone.ui.sensores.SensoresFragment;
+import com.example.lostzone.ui.webservice.WebserviceFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.provider.Settings;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -51,7 +60,9 @@ import android.widget.Toast;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EventosFragment.OnFragmentInteractionListener, InterfacesFragment.OnFragmentInteractionListener,
+        SensoresFragment.OnFragmentInteractionListener, ArchivosFragment.OnFragmentInteractionListener, DatabaseFragment.OnFragmentInteractionListener,
+        WebserviceFragment.OnFragmentInteractionListener, MapsFragment.OnFragmentInteractionListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -74,8 +85,9 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_home, R.id.nav_eventos, R.id.nav_Interfaces,
+                R.id.nav_sensores, R.id.nav_archivos,R.id.nav_database, R.id.nav_webservice,
+                R.id.nav_maps, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -84,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(validaPermisos()){
-            Toast.makeText(MainActivity.this, "Confirmo", Toast.LENGTH_SHORT).show();
+            Log.e("Permisos", "Confirmo!");
         }else{
             Toast.makeText(MainActivity.this, "Niego", Toast.LENGTH_SHORT).show();
         }
@@ -213,11 +225,16 @@ public class MainActivity extends AppCompatActivity {
                 btn_dlg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Double suma = Double.parseDouble(txt_dlg1.getText().toString()) + Double.parseDouble(txt_dlg2.getText().toString());
+                        try {
+                            Double suma = Double.parseDouble(txt_dlg1.getText().toString()) + Double.parseDouble(txt_dlg2.getText().toString());
 
-                        Toast.makeText(MainActivity.this, "La suma es: " + suma, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "La suma es: " + suma, Toast.LENGTH_SHORT).show();
 
-                        dlg.hide();
+                            dlg.hide();
+                        } catch (NumberFormatException ex){
+                            Toast.makeText(MainActivity.this, "Ingresa Numeros, CERDO", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 });
                 dlg.show();
@@ -259,4 +276,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

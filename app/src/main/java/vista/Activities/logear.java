@@ -31,7 +31,16 @@ public class logear extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(logear.this, "Usuario: " + usuario.getText()
-                + "\n" +"Clave: " + clave.getText(), Toast.LENGTH_SHORT).show();
+        String username = usuario.getText().toString();
+        String password = clave.getText().toString();
+        if (username.equals("") && password.equals("")){
+            Toast.makeText(this, "INSERTA DATOS, PUERCO", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(logear.this, "Usuario: " + username
+                    + "\n" +"Clave: " + password, Toast.LENGTH_SHORT).show();
+            usuario.setText(null);
+            clave.setText(null);
+        }
+
     }
 }

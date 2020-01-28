@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:ems="10"
-        android:hint="NUmeor"
+        android:hint="Numeor 1"
         android:inputType="numberDecimal"
         android:padding="20dp" />
 
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:ems="10"
-        android:hint="numeor"
+        android:hint="Numeor 2"
         android:inputType="numberDecimal"
         android:padding="20dp" />
 

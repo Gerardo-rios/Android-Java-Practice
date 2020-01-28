@@ -1,63 +1,50 @@
-package vista.Fragmentos;
+package com.example.lostzone.ui.interfaces;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.lostzone.MainActivity;
 import com.example.lostzone.R;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-import modelo.Artista;
-import vista.Activities.MIadapter;
+import vista.Activities.Artistas_RecyclerView;
+import vista.Activities.Escuchar_Fragmento_Activity;
+import vista.Fragmentos.Fragemento_Activity;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FragmentoPR.OnFragmentInteractionListener} interface
+ * {@link InterfacesFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FragmentoPR#newInstance} factory method to
+ * Use the {@link InterfacesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentoPR extends Fragment implements View.OnClickListener{
+public class InterfacesFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    //////////////////////COMPONENTEES//////////////////////////
-    Button btn_leerRaw;
-    TextView leerRaw;
-    List<Artista> lista;
-    MIadapter adapter;
-    RecyclerView recycler;
-    //////////////////////COMPONENTEES//////////////////////////
-
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Button color, clicks, dialogo, recicler;
 
     private OnFragmentInteractionListener mListener;
 
-    public FragmentoPR() {
+    public InterfacesFragment() {
         // Required empty public constructor
     }
 
@@ -67,11 +54,11 @@ public class FragmentoPR extends Fragment implements View.OnClickListener{
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentoPR.
+     * @return A new instance of fragment InterfacesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentoPR newInstance(String param1, String param2) {
-        FragmentoPR fragment = new FragmentoPR();
+    public static InterfacesFragment newInstance(String param1, String param2) {
+        InterfacesFragment fragment = new InterfacesFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -92,7 +79,7 @@ public class FragmentoPR extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento_pr, container, false);
+        return inflater.inflate(R.layout.fragment_interfaces, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -122,44 +109,58 @@ public class FragmentoPR extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tomarcontrol();
-    }
-
-    public void tomarcontrol(){
-        btn_leerRaw = getActivity().findViewById(R.id.btn_leerRAW_frg);
-        leerRaw = getActivity().findViewById(R.id.lbl_leerRAW_frg);
-        recycler = getActivity().findViewById(R.id.recicler_raw_frg);
-        btn_leerRaw.setOnClickListener(this);
-    }
-
-    private void cargarRecycler(){
-        adapter = new MIadapter(lista);
-        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        recycler.setAdapter(adapter);
+        color = getActivity().findViewById(R.id.btn_btncolores);
+        clicks = getActivity().findViewById(R.id.btn_btncliks);
+        dialogo = getActivity().findViewById(R.id.btn_btndialogo);
+        recicler = getActivity().findViewById(R.id.btn_btnrecicler);
+        color.setOnClickListener(this);
+        clicks.setOnClickListener(this);
+        dialogo.setOnClickListener(this);
+        recicler.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        try {
-            InputStream input = getResources().openRawResource(R.raw.archivo_raw);
-            BufferedReader lector = new BufferedReader(new InputStreamReader(input));
-            String cadena = lector.readLine();
-            //leerRaw.setText(R.drawable.osama + " " + R.drawable.wazoski + " " + R.drawable.feelsbatman + " " + R.drawable.lanita + " " + R.drawable.riley + " " + R.drawable.yopuesquienmas);
-            //leerRaw.setText("Datos listados");
-            String[] split1 = cadena.split(";");
-            lista = new ArrayList<>();
-            for (int i = 0; i < split1.length; i++){
-                String[] attrs = split1[i].split(",");
-                Artista art = new Artista();
-                art.setNombres(attrs[0]);
-                art.setNartistico(attrs[1]);
-                art.setNacimiento(attrs[2]);
-                art.setFoto(Integer.parseInt(attrs[3]));
-                lista.add(art);
-            }
-            cargarRecycler();
-        } catch (IOException e) {
-            Log.e("Malario", "Recontra mal perro, no se pudo leer");
+        Intent intencion = new Intent();
+
+        switch (v.getId()){
+
+            case R.id.btn_btncolores:
+                intencion = new Intent(getContext(), Fragemento_Activity.class);
+                startActivity(intencion);
+                break;
+            case R.id.btn_btncliks:
+                intencion = new Intent(getContext(), Escuchar_Fragmento_Activity.class);
+                startActivity(intencion);
+                break;
+            case R.id.btn_btndialogo:
+                final Dialog dlg = new Dialog(getContext());
+                dlg.setContentView(R.layout.layout_dialogo);
+                final EditText txt_dlg1 = dlg.findViewById(R.id.txt_dlg1);
+                final EditText txt_dlg2 = dlg.findViewById(R.id.txt_dlg2);
+                Button btn_dlg = dlg.findViewById(R.id.btn_dlg);
+                btn_dlg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Double suma = Double.parseDouble(txt_dlg1.getText().toString()) + Double.parseDouble(txt_dlg2.getText().toString());
+
+                            Toast.makeText(getContext(), "La suma es: " + suma, Toast.LENGTH_SHORT).show();
+
+                            dlg.hide();
+                        } catch (NumberFormatException ex){
+                            Toast.makeText(getContext(), "Ingresa Numeros, CERDO", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+                dlg.show();
+                break;
+            case R.id.btn_btnrecicler:
+                intencion = new Intent(getContext(), Artistas_RecyclerView.class);
+                startActivity(intencion);
+                break;
+
         }
     }
 

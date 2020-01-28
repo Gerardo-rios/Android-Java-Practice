@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,12 +43,26 @@ public class IgresarNombreApellido extends AppCompatActivity implements View.OnC
         intencion.putExtra("apellido", apellido.getText().toString()); */
 
         //otra forma
+        String name = nombre.getText().toString();
+        String lastname = apellido.getText().toString();
 
-        bundle.putString("nombre", nombre.getText().toString());
-        bundle.putString("apellido", apellido.getText().toString());
-        intencion = intencion.putExtras(bundle);
+        if (!name.equals("") && !lastname.equals("")){
 
-        startActivity(intencion);
+            bundle.putString("nombre", name);
+            bundle.putString("apellido", lastname);
+            intencion = intencion.putExtras(bundle);
+
+            startActivity(intencion);
+
+            nombre.setText(null);
+            apellido.setText(null);
+
+        } else{
+
+            Toast.makeText(this, "No haz ingresado datos, Calvo", Toast.LENGTH_SHORT).show();
+
+        }
+
 
 
     }

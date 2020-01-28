@@ -1,15 +1,19 @@
 package vista.Activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import com.example.lostzone.R;
 
 public class verNombreApellido extends AppCompatActivity {
 
     TextView Vnombre, Vapellido;
+
 
 
     @Override
@@ -25,12 +29,15 @@ public class verNombreApellido extends AppCompatActivity {
         Vnombre = findViewById(R.id.lbl_nombre);
         Vapellido = findViewById(R.id.lbl_apellido);
 
+
         /*Vnombre.setText(getIntent().getStringExtra("nombre"));
         Vapellido.setText(getIntent().getStringExtra("apellido"));*/
         //otra forma
         Bundle bundle = this.getIntent().getExtras();
         Vnombre.setText(bundle.getString("nombre"));
         Vapellido.setText(bundle.getString("apellido"));
+
+
     }
 
 }

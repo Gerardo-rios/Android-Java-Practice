@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.database.DatabaseFragment">
+
+    <Button
+        android:id="@+id/btn_btnhelper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="50px"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="60dp"
+        android:text="HELPERS" />
+
+    <Button
+        android:id="@+id/btn_btnorm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="50px"
+        android:paddingTop="3dp"
+        android:layout_marginBottom="60dp"
+        android:text="ORM" />
+
+</LinearLayout>

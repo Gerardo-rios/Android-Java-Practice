@@ -12,22 +12,46 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.lostzone.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_eventos"
+        android:name="com.example.lostzone.ui.eventos.EventosFragment"
+        android:label="@string/menu_eventos"
+        tools:layout="@layout/fragment_eventos" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.lostzone.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_Interfaces"
+        android:name="com.example.lostzone.ui.interfaces.InterfacesFragment"
+        android:label="@string/menu_interfaces"
+        tools:layout="@layout/fragment_interfaces" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.lostzone.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_sensores"
+        android:name="com.example.lostzone.ui.sensores.SensoresFragment"
+        android:label="@string/menu_sensores"
+        tools:layout="@layout/fragment_sensores" />
+
+    <fragment
+        android:id="@+id/nav_archivos"
+        android:name="com.example.lostzone.ui.archivos.ArchivosFragment"
+        android:label="@string/menu_archivos"
+        tools:layout="@layout/fragment_archivos" />
+
+    <fragment
+        android:id="@+id/nav_database"
+        android:name="com.example.lostzone.ui.database.DatabaseFragment"
+        android:label="@string/menu_database"
+        tools:layout="@layout/fragment_database" />
+
+    <fragment
+        android:id="@+id/nav_webservice"
+        android:name="com.example.lostzone.ui.webservice.WebserviceFragment"
+        android:label="@string/menu_webservice"
+        tools:layout="@layout/fragment_webservice" />
+
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="com.example.lostzone.ui.maps.MapsFragment"
+        android:label="@string/menu_mapas"
+        tools:layout="@layout/fragment_maps" />
 
     <fragment
         android:id="@+id/nav_share"

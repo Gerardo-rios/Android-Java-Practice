@@ -1,29 +1,26 @@
-package vista.Fragmentos;
+package com.example.lostzone.ui.webservice;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.lostzone.R;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.example.lostzone.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FrgUno.OnFragmentInteractionListener} interface
+ * {@link WebserviceFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FrgUno#newInstance} factory method to
+ * Use the {@link WebserviceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FrgUno extends Fragment {
+public class WebserviceFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -35,7 +32,7 @@ public class FrgUno extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public FrgUno() {
+    public WebserviceFragment() {
         // Required empty public constructor
     }
 
@@ -45,11 +42,11 @@ public class FrgUno extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FrgUno.
+     * @return A new instance of fragment WebserviceFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FrgUno newInstance(String param1, String param2) {
-        FrgUno fragment = new FrgUno();
+    public static WebserviceFragment newInstance(String param1, String param2) {
+        WebserviceFragment fragment = new WebserviceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,31 +63,11 @@ public class FrgUno extends Fragment {
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_frg_uno, container, false);
-        final EditText n1 = vista.findViewById(R.id.txt_n1f1); //no se puede usar findviewbyid si no pertenecen al activiy donde esta el componente
-        final EditText n2 = vista.findViewById(R.id.txt_n2f1);
-        final Button btn = vista.findViewById(R.id.btn_Sumarfrg1);
-
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Double suma = Double.parseDouble(n1.getText().toString()) + Double.parseDouble(n2.getText().toString());
-                    Toast.makeText(getContext(), suma.toString(), Toast.LENGTH_SHORT).show();
-                } catch (NumberFormatException ex){
-                    Toast.makeText(getContext(), "Inserta numeros, CERDO", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-        return vista;
+        return inflater.inflate(R.layout.fragment_webservice, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

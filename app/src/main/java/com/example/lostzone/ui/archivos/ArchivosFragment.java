@@ -1,29 +1,33 @@
-package vista.Fragmentos;
+package com.example.lostzone.ui.archivos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
+import com.example.lostzone.MainActivity;
 import com.example.lostzone.R;
 
+import vista.Activities.Archivos_Memoria;
+import vista.Activities.reyesMagos;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FrgUno.OnFragmentInteractionListener} interface
+ * {@link ArchivosFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FrgUno#newInstance} factory method to
+ * Use the {@link ArchivosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FrgUno extends Fragment {
+public class ArchivosFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,10 +36,11 @@ public class FrgUno extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Button arch, xml;
 
     private OnFragmentInteractionListener mListener;
 
-    public FrgUno() {
+    public ArchivosFragment() {
         // Required empty public constructor
     }
 
@@ -45,11 +50,11 @@ public class FrgUno extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FrgUno.
+     * @return A new instance of fragment ArchivosFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FrgUno newInstance(String param1, String param2) {
-        FrgUno fragment = new FrgUno();
+    public static ArchivosFragment newInstance(String param1, String param2) {
+        ArchivosFragment fragment = new ArchivosFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,31 +71,11 @@ public class FrgUno extends Fragment {
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_frg_uno, container, false);
-        final EditText n1 = vista.findViewById(R.id.txt_n1f1); //no se puede usar findviewbyid si no pertenecen al activiy donde esta el componente
-        final EditText n2 = vista.findViewById(R.id.txt_n2f1);
-        final Button btn = vista.findViewById(R.id.btn_Sumarfrg1);
-
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Double suma = Double.parseDouble(n1.getText().toString()) + Double.parseDouble(n2.getText().toString());
-                    Toast.makeText(getContext(), suma.toString(), Toast.LENGTH_SHORT).show();
-                } catch (NumberFormatException ex){
-                    Toast.makeText(getContext(), "Inserta numeros, CERDO", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-        return vista;
+        return inflater.inflate(R.layout.fragment_archivos, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -115,6 +100,34 @@ public class FrgUno extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        arch = getActivity().findViewById(R.id.btn_btnarchivos);
+        xml = getActivity().findViewById(R.id.btn_btnxml);
+        arch.setOnClickListener(this);
+        xml.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intencion = new Intent();
+
+        switch (v.getId()){
+
+            case R.id.btn_btnxml:
+                intencion = new Intent(getContext(), reyesMagos.class);
+                startActivity(intencion);
+                break;
+            case R.id.btn_btnarchivos:
+                intencion = new Intent(getContext(), Archivos_Memoria.class);
+                startActivity(intencion);
+                break;
+
+        }
+
     }
 
     /**

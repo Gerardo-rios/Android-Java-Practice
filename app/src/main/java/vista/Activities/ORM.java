@@ -63,19 +63,31 @@ public class ORM extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.btn_AgregarCar:
 
-                Vehiculo ve = new Vehiculo();
-                ve.setPlaca(placa.getText().toString());
-                ve.setMarca(marca.getText().toString());
-                ve.setModelo(model.getText().toString());
-                ve.setAnio(ano.getText().toString());
-                ve.save();
+                String plaque = placa.getText().toString();
+                String marque = marca.getText().toString();
+                String modele = model.getText().toString();
+                String ane = ano.getText().toString();
 
-                Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+                if (plaque.equals("") || marque.equals("") || modele.equals("") || ane.equals("")){
 
-                placa.setText(null);
-                marca.setText(null);
-                model.setText(null);
-                ano.setText(null);
+                    Toast.makeText(this, "INGRESA DATOS, PUERCO", Toast.LENGTH_SHORT).show();
+
+                } else{
+                    Vehiculo ve = new Vehiculo();
+                    ve.setPlaca(plaque);
+                    ve.setMarca(marque);
+                    ve.setModelo(modele);
+                    ve.setAnio(ane);
+                    ve.save();
+
+                    Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
+
+                    placa.setText(null);
+                    marca.setText(null);
+                    model.setText(null);
+                    ano.setText(null);
+
+                }
 
                 break;
 
@@ -90,41 +102,78 @@ public class ORM extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.btn_BuscarPlaca:
 
-                Vehiculo automovil = Vehiculo.getCarroPlaca(placa.getText().toString());
+                String plaquina = placa.getText().toString();
 
-                List<Vehiculo> auto = new ArrayList<>();
+                if (!plaquina.equals("")){
 
-                auto.add(automovil);
+                    Vehiculo automovil = Vehiculo.getCarroPlaca(plaquina);
 
-                adapter = new ormAdapter(auto);
-                recycler.setLayoutManager(new LinearLayoutManager(this));
-                recycler.setAdapter(adapter);
+                    List<Vehiculo> auto = new ArrayList<>();
+
+                    auto.add(automovil);
+
+                    adapter = new ormAdapter(auto);
+                    recycler.setLayoutManager(new LinearLayoutManager(this));
+                    recycler.setAdapter(adapter);
+
+                } else {
+
+                    Toast.makeText(this, "INGRESA PLACA, CERDO", Toast.LENGTH_SHORT).show();
+
+                }
 
                 break;
 
             case R.id.btn_EliminarCar:
 
-                Vehiculo.deleteCar(placa.getText().toString());
+                String claca = placa.getText().toString();
 
-                adapter = new ormAdapter(Vehiculo.getAllCarro());
-                recycler.setLayoutManager(new LinearLayoutManager(this));
-                recycler.setAdapter(adapter);
+                if (claca.equals("")){
+                    Toast.makeText(this, "INGRESA PLACA, PUERCO", Toast.LENGTH_SHORT).show();
+                } else{
+                    Vehiculo.deleteCar(claca);
+
+                    adapter = new ormAdapter(Vehiculo.getAllCarro());
+                    recycler.setLayoutManager(new LinearLayoutManager(this));
+                    recycler.setAdapter(adapter);
+                }
 
                 break;
 
             case R.id.btn_ModificarCar:
 
-                Vehiculo carre = Vehiculo.getCarroPlaca(placa.getText().toString());
+                String plaquicina = placa.getText().toString();
+                Vehiculo carre = null;
+                if (!plaquicina.equals("")){
+                    carre = Vehiculo.getCarroPlaca(placa.getText().toString());
+                } else {
+                    Toast.makeText(this, "INGRESA PLACA, PUERCO", Toast.LENGTH_SHORT).show();
+                }
+                String marcina = marca.getText().toString();
+                String modelsino = model.getText().toString();
+                String anino = ano.getText().toString();
+                if (carre != null){
 
-                carre.setMarca(marca.getText().toString());
-                carre.setModelo(model.getText().toString());
-                carre.setAnio(ano.getText().toString());
+                    if (marcina.equals("") || modelsino.equals("") || anino.equals("")){
+                        Toast.makeText(this, "No puedes modificar con datos vacios, warro", Toast.LENGTH_SHORT).show();
+                    } else{
+                        carre.setMarca(marcina);
+                        carre.setModelo(modelsino);
+                        carre.setAnio(anino);
 
-                carre.save();
+                        carre.save();
 
-                adapter = new ormAdapter(Vehiculo.getAllCarro());
-                recycler.setLayoutManager(new LinearLayoutManager(this));
-                recycler.setAdapter(adapter);
+                        adapter = new ormAdapter(Vehiculo.getAllCarro());
+                        recycler.setLayoutManager(new LinearLayoutManager(this));
+                        recycler.setAdapter(adapter);
+
+                    }
+
+                } else {
+
+                    Toast.makeText(this, "No existe ese registro", Toast.LENGTH_SHORT).show();
+
+                }
 
                 break;
         }

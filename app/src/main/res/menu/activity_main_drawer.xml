@@ -6,23 +6,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/inicio"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_eventos"
+            android:icon="@drawable/eventos"
+            android:title="@string/menu_eventos" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_Interfaces"
+            android:icon="@drawable/interfaces"
+            android:title="@string/menu_interfaces" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_sensores"
+            android:icon="@drawable/sensores"
+            android:title="@string/menu_sensores" />
+        <item
+            android:id="@+id/nav_archivos"
+            android:icon="@drawable/archivos"
+            android:title="@string/menu_archivos" />
+        <item
+            android:id="@+id/nav_database"
+            android:icon="@drawable/database"
+            android:title="@string/menu_database" />
+        <item
+            android:id="@+id/nav_webservice"
+            android:icon="@drawable/webservice"
+            android:title="@string/menu_webservice" />
+        <item
+            android:id="@+id/nav_maps"
+            android:icon="@drawable/maps"
+            android:title="@string/menu_mapas" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Comunicacion">
         <menu>
             <item
                 android:id="@+id/nav_share"

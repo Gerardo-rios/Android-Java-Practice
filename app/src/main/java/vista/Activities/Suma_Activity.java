@@ -33,17 +33,22 @@ public class Suma_Activity extends AppCompatActivity implements View.OnClickList
     public Double sumar(){
         Double resultado = null;
 
-        resultado = Double.parseDouble(num1.getText().toString()) + Double.parseDouble(num2.getText().toString());
+        try {
 
+            resultado = Double.parseDouble(num1.getText().toString()) + Double.parseDouble(num2.getText().toString());
+
+
+        } catch (NumberFormatException ex){
+
+            Toast.makeText(this, "Ingresa un numero, CERDO", Toast.LENGTH_SHORT).show();
+
+        }
         return resultado;
     }
 
 
     @Override
     public void onClick(View v) {
-
-        //sumar();
-
 
         Toast.makeText(Suma_Activity.this, "La suma es: " + sumar(), Toast.LENGTH_SHORT).show();
 
