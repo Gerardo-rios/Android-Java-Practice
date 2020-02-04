@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vista.Activities.WebService">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:background="#6CA4A6"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/txt_idAlumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Id Alumno"/>
+        <EditText
+            android:id="@+id/txt_NombreAlumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:hint="Nombre" />
+
+        <EditText
+            android:id="@+id/txt_DireccionALumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"
+            android:hint="Direccion"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6CA4A6"
+        android:orientation="horizontal"
+        android:padding="40px">
+
+        <Button
+            android:id="@+id/btn_anadirA"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:padding="10px"
+            android:text="ADD"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_ListarA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:padding="10px"
+            android:textStyle="bold"
+            android:text="LIST" />
+
+        <Button
+            android:id="@+id/btn_ModificarA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:textStyle="bold"
+            android:padding="10px"
+            android:text="MODIFY" />
+
+        <Button
+            android:id="@+id/btn_BuscarAid"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:padding="10px"
+            android:text="Find by ID"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_EliminarAllA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10px"
+            android:background="@drawable/custom_button"
+            android:textStyle="bold"
+            android:text="Delete" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbl_datesA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        tools:visibility="invisible" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_alumnos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5" />
+
+</LinearLayout>

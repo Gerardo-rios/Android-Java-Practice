@@ -28,6 +28,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import modelo.Alumno;
 import modelo.Rey;
 
 public class reyesMagos extends AppCompatActivity {
@@ -36,6 +37,7 @@ public class reyesMagos extends AppCompatActivity {
     reyesAdapter adapter;
     List<Rey> reyes = new ArrayList<>();
     TextView reyesMagos;
+    List<Alumno> alumnos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

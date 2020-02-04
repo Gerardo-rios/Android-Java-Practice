@@ -19,6 +19,7 @@ import vista.Activities.MemoriaExterna;
 import vista.Activities.ORM;
 import vista.Activities.ProductoHelper;
 import vista.Activities.Suma_Activity;
+import vista.Activities.WebService;
 import vista.Activities.logear;
 import vista.Activities.reyesMagos;
 import vista.Fragmentos.Fragemento_Activity;
@@ -269,6 +270,10 @@ public class MainActivity extends AppCompatActivity implements EventosFragment.O
                 break;
             case R.id.opcionORM:
                 intencion = new Intent(MainActivity.this, ORM.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionHilo:
+                intencion = new Intent(MainActivity.this, WebService.class);
                 startActivity(intencion);
                 break;
         }
