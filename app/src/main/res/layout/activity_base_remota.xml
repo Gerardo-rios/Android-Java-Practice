@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="vista.Activities.WebService">
+    tools:context="vista.Activities.BaseRemota">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,16 +15,16 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/txt_idAlumno"
+            android:id="@+id/txt_dni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="italic"
             android:ems="10"
+            android:hint="Cedula"
             android:inputType="number"
-            android:hint="Id Alumno"/>
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic" />
         <EditText
-            android:id="@+id/txt_NombreAlumno"
+            android:id="@+id/txt_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -34,14 +34,21 @@
             android:hint="Nombre" />
 
         <EditText
-            android:id="@+id/txt_DireccionALumno"
+            android:id="@+id/txt_profesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Profesion"
+            android:inputType="textPersonName"
             android:textColor="@color/colorPrimary"
-            android:textStyle="italic"
-            android:hint="Direccion"
-            android:inputType="textPersonName" />
+            android:textStyle="italic" />
+
+        <ImageButton
+            android:id="@+id/btn_foto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_gallery" />
 
     </LinearLayout>
 
@@ -53,7 +60,7 @@
         android:padding="40px">
 
         <Button
-            android:id="@+id/btn_anadirA"
+            android:id="@+id/btn_registrar"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +71,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_ListarA"
+            android:id="@+id/btn_obtener_todos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -74,7 +81,7 @@
             android:text="LIST" />
 
         <Button
-            android:id="@+id/btn_ModificarA"
+            android:id="@+id/btn_actualizar_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -84,7 +91,7 @@
             android:text="MODIFY" />
 
         <Button
-            android:id="@+id/btn_BuscarAid"
+            android:id="@+id/btn_obtener_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -94,7 +101,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_EliminarAllA"
+            android:id="@+id/btn_borrar_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -105,19 +112,16 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lbl_datesA"
+        android:id="@+id/lbl_datos_usuarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:visibility="invisible"
-        tools:visibility="invisible" />
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_alumnos"
+        android:id="@+id/recycler_usuarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.5" />
+        android:layout_weight="0" />
 
 </LinearLayout>

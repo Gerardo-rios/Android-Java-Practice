@@ -9,16 +9,20 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-import vista.Activities.ActividadMemoriaInterna;
 import vista.Activities.Archivos_Memoria;
 import vista.Activities.Artistas_RecyclerView;
+import vista.Activities.BaseRemota;
 import vista.Activities.Escuchar_Fragmento_Activity;
+import vista.Activities.HiloOpenWeather;
 import vista.Activities.IgresarNombreApellido;
-import vista.Activities.MIApp2;
-import vista.Activities.MemoriaExterna;
+import vista.Activities.Luz;
+import vista.Activities.MapsActivity;
 import vista.Activities.ORM;
 import vista.Activities.ProductoHelper;
+import vista.Activities.Acelerometro;
+import vista.Activities.Proximidad;
 import vista.Activities.Suma_Activity;
+import vista.Activities.VolleySW;
 import vista.Activities.WebService;
 import vista.Activities.logear;
 import vista.Activities.reyesMagos;
@@ -106,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements EventosFragment.O
 
     private boolean validaPermisos() {
 
-        if(Build.VERSION.SDK_INT< Build.VERSION_CODES.M){
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
             return true;
         }
 
@@ -272,8 +276,36 @@ public class MainActivity extends AppCompatActivity implements EventosFragment.O
                 intencion = new Intent(MainActivity.this, ORM.class);
                 startActivity(intencion);
                 break;
-            case R.id.opcionHilo:
+            case R.id.hiloalumno:
                 intencion = new Intent(MainActivity.this, WebService.class);
+                startActivity(intencion);
+                break;
+            case R.id.hiloclima:
+                intencion = new Intent(MainActivity.this, HiloOpenWeather.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionVolley:
+                intencion = new Intent(MainActivity.this, VolleySW.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionRemota:
+                intencion = new Intent(MainActivity.this, BaseRemota.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionMapas:
+                intencion = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionAcelerometro:
+                intencion = new Intent(MainActivity.this, Acelerometro.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionProximidad:
+                intencion = new Intent(MainActivity.this, Proximidad.class);
+                startActivity(intencion);
+                break;
+            case R.id.opcionLuz:
+                intencion = new Intent(MainActivity.this, Luz.class);
                 startActivity(intencion);
                 break;
         }

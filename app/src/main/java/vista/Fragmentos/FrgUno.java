@@ -76,8 +76,6 @@ public class FrgUno extends Fragment {
         final EditText n2 = vista.findViewById(R.id.txt_n2f1);
         final Button btn = vista.findViewById(R.id.btn_Sumarfrg1);
 
-
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

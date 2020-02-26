@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="vista.Activities.WebService">
+    tools:context="vista.Activities.VolleySW">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/txt_idAlumno"
+            android:id="@+id/txt_idalumnoVolley"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
@@ -24,7 +24,7 @@
             android:inputType="number"
             android:hint="Id Alumno"/>
         <EditText
-            android:id="@+id/txt_NombreAlumno"
+            android:id="@+id/txt_NombreAlumnoVolley"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -34,7 +34,7 @@
             android:hint="Nombre" />
 
         <EditText
-            android:id="@+id/txt_DireccionALumno"
+            android:id="@+id/txt_DireccionALumnoVolley"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -53,7 +53,7 @@
         android:padding="40px">
 
         <Button
-            android:id="@+id/btn_anadirA"
+            android:id="@+id/btn_anadirAVolley"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_ListarA"
+            android:id="@+id/btn_ListarAVolley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -74,7 +74,7 @@
             android:text="LIST" />
 
         <Button
-            android:id="@+id/btn_ModificarA"
+            android:id="@+id/btn_ModificarAVolley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -84,7 +84,7 @@
             android:text="MODIFY" />
 
         <Button
-            android:id="@+id/btn_BuscarAid"
+            android:id="@+id/btn_BuscarAidVolley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -94,7 +94,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_EliminarAllA"
+            android:id="@+id/btn_EliminarAVolley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -104,18 +104,9 @@
             android:text="Delete" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/lbl_datesA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:visibility="invisible"
-        tools:visibility="invisible" />
-
-
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_alumnos"
+        android:id="@+id/recycler_alumnosVolley"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1.5" />

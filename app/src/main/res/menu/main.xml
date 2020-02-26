@@ -153,11 +153,32 @@
                 android:id="@+id/opcionHilo"
                 android:title="Hilo">
 
+                <menu>
+
+                    <item
+                        android:id="@+id/hiloalumno"
+                        android:title="Alumnos"
+                        ></item>
+
+                    <item
+                        android:id="@+id/hiloclima"
+                        android:title="Clima"
+                        ></item>
+
+                </menu>
+
             </item>
             <item
 
                 android:id="@+id/opcionVolley"
                 android:title="Volley">
+
+            </item>
+
+            <item
+
+                android:id="@+id/opcionRemota"
+                android:title="BD remota">
 
             </item>
 

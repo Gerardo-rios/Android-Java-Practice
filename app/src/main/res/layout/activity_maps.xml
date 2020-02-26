@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vista.Activities.MapsActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_satelite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satelite"
+            android:background="@drawable/custom_button">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_terreno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terreno"
+            android:background="@drawable/custom_button">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_hibrido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hibrido"
+            android:background="@drawable/custom_button">
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="vista.Activities.MapsActivity"
+        />
+
+    </LinearLayout>
+
+
