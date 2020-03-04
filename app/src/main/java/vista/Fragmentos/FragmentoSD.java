@@ -212,7 +212,7 @@ public class FragmentoSD extends Fragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.btn_guardarME_frg:
                 File ruta = Environment.getExternalStorageDirectory();
-                File file = new File(ruta.getAbsoluteFile(), "archivoXs.txt");
+                File file = new File(ruta.getAbsoluteFile(), "archivos1537.txt");
                 try {
                     OutputStreamWriter escritor = new OutputStreamWriter(new FileOutputStream(file, true));
                     escritor.write(cajaNombre.getText().toString() + " " + cajaApellido.getText().toString() + "," + cajaArtistico.getText().toString() + "," + nacio.getText().toString() + "," + imageUri.toString() + ";");
@@ -230,7 +230,7 @@ public class FragmentoSD extends Fragment implements View.OnClickListener{
                 break;
             case R.id.btn_buscarTodosME_frg:
                 File path = Environment.getExternalStorageDirectory();
-                File archivo = new File(path.getAbsoluteFile(), "archivoXs.txt");
+                File archivo = new File(path.getAbsoluteFile(), "archivos1537.txt");
                 try {
                     BufferedReader lector = new BufferedReader(new InputStreamReader(new FileInputStream(archivo)));
                     cargarRecycler(lector.readLine());

@@ -5,16 +5,18 @@ public class Ruta {
     private Double lati;
     private Double longi;
     private String title;
+    private String snipet;
     private int icon;
 
     public void Ruta(){
 
     }
 
-    public Ruta(Double lati, Double longi, String title) {
+    public Ruta(Double lati, Double longi, String title, String snipet) {
         this.lati = lati;
         this.longi = longi;
         this.title = title;
+        this.snipet = snipet;
     }
 
     public Double getLati() {
@@ -39,6 +41,14 @@ public class Ruta {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSnipet() {
+        return snipet;
+    }
+
+    public void setSnipet(String snipet) {
+        this.snipet = snipet;
     }
 
     public int getIcon() {

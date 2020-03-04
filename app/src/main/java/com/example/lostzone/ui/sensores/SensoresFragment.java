@@ -1,16 +1,23 @@
 package com.example.lostzone.ui.sensores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.lostzone.R;
+
+import vista.Activities.Acelerometro;
+import vista.Activities.Luz;
+import vista.Activities.Proximidad;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +27,7 @@ import com.example.lostzone.R;
  * Use the {@link SensoresFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SensoresFragment extends Fragment {
+public class SensoresFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,7 +74,19 @@ public class SensoresFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_sensores, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Button luz = getActivity().findViewById(R.id.button_luz);
+        Button proxi = getActivity().findViewById(R.id.button_proximidad);
+        Button acele = getActivity().findViewById(R.id.button_acelerometro);
+        luz.setOnClickListener(this);
+        proxi.setOnClickListener(this);
+        acele.setOnClickListener(this);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -92,6 +111,29 @@ public class SensoresFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Intent intencion;
+
+        switch (v.getId()){
+
+            case R.id.button_luz:
+                intencion = new Intent(getContext(), Luz.class);
+                startActivity(intencion);
+                break;
+            case R.id.button_proximidad:
+                intencion = new Intent(getContext(), Proximidad.class);
+                startActivity(intencion);
+                break;
+            case R.id.button_acelerometro:
+                intencion = new Intent(getContext(), Acelerometro.class);
+                startActivity(intencion);
+                break;
+        }
+
     }
 
     /**

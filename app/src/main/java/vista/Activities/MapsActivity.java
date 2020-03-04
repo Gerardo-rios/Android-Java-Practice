@@ -1,11 +1,18 @@
 package vista.Activities;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Dialog;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lostzone.R;
@@ -16,6 +23,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -27,6 +35,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import Controller.CustomInfoWindowAdapter;
 import Controller.LeerArchivosParaMaps;
 import modelo.Ruta;
 
@@ -36,6 +45,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Button satelite, terreno, hibrido;
     LeerArchivosParaMaps lapm = new LeerArchivosParaMaps(this);
     List<Ruta> ls;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,10 +93,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .clickable(true)
                 .color(R.color.colorAccent));
         List<LatLng> lg = new ArrayList<>();
+        lg.add(sydney);
         for (int i = 0; i< ls.size(); i++){
             LatLng lgp = new LatLng(ls.get(i).getLati(), ls.get(i).getLongi());
-            mMap.addMarker(new MarkerOptions().position(lgp).title(ls.get(i).getTitle()) );
+            String nom = ls.get(i).getTitle();
+            String de = ls.get(i).getSnipet();
+            if  (!nom.equals(" camino") && !de.equals(" nada")){
+                mMap.addMarker(new MarkerOptions().position(lgp).title(nom).snippet(de));
+            }
             lg.add(lgp);
+            mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(MapsActivity.this));
         }
         polyline1.setPoints(lg);
     }
@@ -110,4 +126,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     }
+
 }

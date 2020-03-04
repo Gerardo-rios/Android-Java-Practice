@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements EventosFragment.O
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
         if(validaPermisos()){
             Log.e("Permisos", "Confirmo!");
         }else{

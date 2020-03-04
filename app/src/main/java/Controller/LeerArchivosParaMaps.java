@@ -45,10 +45,12 @@ public class LeerArchivosParaMaps {
 
             String [] latslongsT = rutas[i].split(";");
             String [] ll = latslongsT[0].split(",");
-            String title = latslongsT[1];
+            String [] ts = latslongsT[1].split(",");
             String lati = ll[0];
             String log = ll[1];
-            Ruta r = new Ruta(Double.parseDouble(lati), Double.parseDouble(log), title);
+            String title = ts[0];
+            String desc = ts[1];
+            Ruta r = new Ruta(Double.parseDouble(lati), Double.parseDouble(log), title, desc);
             puntos.add(r);
 
         }
